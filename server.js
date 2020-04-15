@@ -22,4 +22,4 @@ app.use(express.json()) // for parsing application/json
 const expressServer = app.listen(port, () => console.log('Server is running on port ' + port));
 const io = socket(expressServer);
 
-const Home = require(app, io);
+Home = require(app, io);
