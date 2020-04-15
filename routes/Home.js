@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Chat = require('../models/chat.model');
 
 const Home = (app, io) => {
-    app.get('/api', async (req, res) => {
+    app.get("/api", async (req, res) => {
         const chatList = await Chat.find()
             .sort({ date: -1 })
             .limit(4);
@@ -10,7 +10,7 @@ const Home = (app, io) => {
     });
 
     // Socket part
-    io.of('/').on("connect", async socket => {
+    io.of("/").on("connect", async socket => {
         console.log("Connected ...");
 
         socket.on("typing", async msg => {
